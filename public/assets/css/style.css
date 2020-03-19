@@ -1,0 +1,33 @@
+.jumbotron {
+    align-content: center;
+    background-color: whitesmoke;
+    font-size: large;
+    padding-left: 50pt;
+}
+.form-control {
+    width: 35%;
+    align-content: center;
+}
+.display-4 {
+    font-weight: 500;
+    text-align: center;
+}
+
+.lead {
+    text-align: center;
+}
+
+.first-container {
+    margin-left:45% ;
+}
+.submit {
+    margin-left: 90%;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.form-group {
+    align-items: center;
+}
