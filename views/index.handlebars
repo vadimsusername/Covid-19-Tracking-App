@@ -17,77 +17,71 @@
     <label for="enterCountryToSearch">Please Enter Country to Search</label>
     <input type="country" class="form-control mr-sm-2" id="enterCountryToSearch" placeholder="country name goes here">
   </div>
-
+<div class="submit">
   <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-  <br>
-  <br>
-
-</div>
-<img src="/assets/img/covid.png" alt="HTML5 Icon" width="400" height="200">
-
-<br>
-<br>
-
-<div class="card">
-  <div class="card-body">
-    <h2>Coronavirus COVID-19 Global Hot Zones</h2>
-    <ul>
-      <li>
-        <p>Country: China || COVID-19 Incidents: 81,347 || Deaths: 3,130</p>
-        <p>Country: Italy || COVID-19 Incidents: 35,461 || Deaths: 2,978</p>
-        <p>Country: United States || COVID-19 Incidents: 5,650 || Deaths: 47</p>
-      </li>
-    </ul>
   </div>
 </div>
+
+<br>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <img src="/assets/img/covid.png" alt="HTML5 Icon" width="400" height="200">
+        <h4 class="card-title">A Global Impact</h4>
+        <p class="card-text">The Coronavirus COVID-19 outbreak was declared a Public Health Emergency of International Concern on 30 January 2020 by the World Health Organization.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="globalHotspots">Coronavirus COVID-19 Global Hotspots</h4>
+        <div>
+          <ul>
+            {{#each countries}}
+            {{> countries/countries-block}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
 
 <div class="card">
   <div class="card-body" id="WhatCovid">
     <h1>COVID-19 Global FAQs</h2>
-    <h3>What is Coronavirus:</h3>
-    <p>Coronaviruses are a large family of viruses, some causing illness in people and others circulating
-      among animals, including camels, cats and bats. The 2019 novel coronavirus (COVID-19) is a new
-      virus that causes respiratory illness in people and can spread from person-to-person. This virus
-      was first identified during an investigation into an outbreak in Wuhan, China.</p>
+      <h3>What is Coronavirus:</h3>
+      <p>Coronaviruses are a large family of viruses, some causing illness in people and others circulating
+        among animals, including camels, cats and bats. The 2019 novel coronavirus (COVID-19) is a new
+        virus that causes respiratory illness in people and can spread from person-to-person. This virus
+        was first identified during an investigation into an outbreak in Wuhan, China.</p>
       <br>
       <h3>What are the Symptons of COVID-19:</h3>
-        <p>Symptons of COVID-19 can include:</p>
-            <ul>
-      <li>
-        <p>Fever</p>
-        <p>Cough</p>
-        <p>Shortness of breath</p>
-      </li>
-    </ul>
-    <p>The symptoms may appear in as few as two days or as long as 14 days after exposure. Reported illnesses
-       have ranged from people with little to no symptoms to people being severely ill and dying. </p>
+      <p>Symptons of COVID-19 can include:</p>
+      <ul>
+        <li>
+          <p>Fever</p>
+          <p>Cough</p>
+          <p>Shortness of breath</p>
+        </li>
+      </ul>
+      <p>The symptoms may appear in as few as two days or as long as 14 days after exposure. Reported illnesses
+        have ranged from people with little to no symptoms to people being severely ill and dying. </p>
       <br>
       <h3>How does COVID-19 spread:</h3>
-        <p>Human to human transmital of COVID-19 occurs just like the flu or a cold:</p>
-            <ul>
-      <li>
-        <p>Through the air by coughing or sneezing;</p>
-        <p>Close personal contact, such as touching or shaking hands;</p>
-        <p>touching an object or surface with the virus on it;</p>
-        <p>Occasionally, fecal contamination;</p>
-      </li>
-    </ul>
+      <p>Human to human transmital of COVID-19 occurs just like the flu or a cold:</p>
+      <ul>
+        <li>
+          <p>Through the air by coughing or sneezing;</p>
+          <p>Close personal contact, such as touching or shaking hands;</p>
+          <p>touching an object or surface with the virus on it;</p>
+          <p>Occasionally, fecal contamination;</p>
+        </li>
+      </ul>
   </div>
 </div>
-
-
-
-{{!-- <ul>
-  {{#each countries}}
-  <li>
-    <p>ID: {{this.id}}</p>
-    <p>Country Name: {{#each this.countryName}}</p>
-    <p>COVID-19 Incidents: {{#each this.incidents}}</p>
-    <p>COVID-19 Deaths: {{#each this.deaths}}</p>
-  </li>
-  {{/each}}
-</ul>
-
-<form action="/" method="POST">
-<textarea type="text" name="countries"></textarea>
-</form> --}}
