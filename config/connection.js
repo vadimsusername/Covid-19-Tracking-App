@@ -2,6 +2,7 @@
 // Set up MySQL connection.
 const util = require("util");
 var mysql = require("mysql");
+const dotenv = require("dotenv").config();
 
 
 var connection;
@@ -13,7 +14,7 @@ connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "checksix",
+  password: process.env.MYSQL_PASS,
   database: "covid19_db"
 });
 }
