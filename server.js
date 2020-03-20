@@ -14,31 +14,16 @@ var PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//MySQL DB Connection Information (remember to change this with our specific credentials)
-var connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "checksix",
-    database: "covid19_db"
-  });
-
-// Initiate MySQL Connection.
-connection.connect(function(err) {
-    if (err) {
-      console.error("error connecting: " + err.stack);
-      return;
-    }
-    console.log("connected as id " + connection.threadId);
-  });
-
-  //app.get
-
 ///Set Handlebars as the default templating engine.
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 console.log("test")
+
+// Import routes and give the server access to them.
+var routes = require("./controllers/covid_controller.js");
+
+app.use(routes);
 
 
 //Serve static content for the app from the "public" directory in the application directory.
@@ -46,20 +31,7 @@ app.use(express.static("public"));
 
 
 
-// Root get route
-app.get("/", function(req, res) {
-    connection.query("SELECT * FROM countries;", function(err, data) {
-      if (err) throw err;
-  
-      // Test it
-      // console.log('The solution is: ', data);
-  
-      // Test it
-      // return res.send(data);
-  
-      res.render("index", { countries: data });
-    });
-  });
+
 
 
 

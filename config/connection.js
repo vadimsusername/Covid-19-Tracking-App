@@ -3,6 +3,8 @@
 const util = require("util");
 var mysql = require("mysql");
 
+
+var connection;
 if (process.env.JAWSDB_URL){ 
     connecton = mysql.createConnection(process.env.JAWSDB_URL);
 }
@@ -24,8 +26,6 @@ connection.connect(function(err) {
   }
   console.log("connected as id2 " + connection.threadId);
 });
-
-
 
 // Export connection for our ORM to use.
 module.exports = connection;
