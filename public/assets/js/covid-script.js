@@ -125,6 +125,7 @@ function covid19API(country_input){
 }
 
 $("#submit").on("click",function(event){
+    event.preventDefault();
  var country = $("#enterCountryToSearch").val().trim();
  country = country.replace(" ","-");
  //console.log(country);

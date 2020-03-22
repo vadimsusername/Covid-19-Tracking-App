@@ -27,54 +27,9 @@ var routes = require("./controllers/covid_controller.js");
 
 app.use(routes);
 
-
 //Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
 
-
-
-
-
-
-
-
-
-//////////////////// DATA SECTION/////////////////////
-
-
-// Routes
-
-//app.get("/index")
-//app.get("/", function(req, res) {
-//////////////////////////////////// MYSQL DATA  /////////////////////////////////////////////////////
-//   // If the main route is hit, then we initiate a SQL query to grab all records.
-//   // All of the resulting records are stored in the variable "result."
-//   connection.query("SELECT * FROM countries", function(err, result) {
-//     if (err) throw err;
-//     // We then begin building out HTML elements for the page.
-//     var html = "<h1> COVID-19 Tracking App </h1>";
-
-//     // Here we begin an unordered list.
-//     html += "<ul>";
-
-//     // We then use the retrieved records from the database to populate our HTML file.
-//     for (var i = 0; i < result.length; i++) {
-//       html += "<li><p> ID: " + result[i].id + "</p>";
-//       html += "<p>Country: " + result[i].countryName + " </p>";
-//       html += "<p>Country: " + result[i].incidents + " </p>";
-//       html += "<p>Country: " + result[i].deaths + " </p></li>";
-
-//     }
-  
-
-//     // We close our unordered list.
-//     html += "</ul>";
-
-//     // Finally we send the user the HTML file we dynamically created.
-//     res.send(html);
-//   });
-// });
-/////////////////////////////////////MYSQL DATA ABOVE  /////////////////////////////////////////////////////////////
 // Start our server so that it can begin listening to client requests.
 /* app.listen(PORT, function() {
   // Log (server-side) when our server has started
