@@ -2,18 +2,19 @@
 // Set up MySQL connection.
 const util = require("util");
 var mysql = require("mysql");
+require("dotenv").config();
 
 
 var connection;
 if (process.env.JAWSDB_URL){ 
-    connecton = mysql.createConnection(process.env.JAWSDB_URL);
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
 }
 else{
 connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "checksix",
+  password: process.env.MYSQL_PASS,
   database: "covid19_db"
 });
 }
