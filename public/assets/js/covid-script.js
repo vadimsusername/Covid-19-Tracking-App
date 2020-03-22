@@ -130,4 +130,11 @@ $("#submit").on("click",function(event){
  //console.log(country);
  covid19API(country);
  $(".canvas-div").css("display","block");
+ var newCountry= {
+     country_name : country
+ }
+ $.ajax('/api/countries',{type:'POST',data:newCountry}).then(function(response){
+    // console.log(response);
+     //location.reload();
+});
 });
