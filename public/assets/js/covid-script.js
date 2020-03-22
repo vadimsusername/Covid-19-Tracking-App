@@ -125,9 +125,17 @@ function covid19API(country_input){
 }
 
 $("#submit").on("click",function(event){
+    event.preventDefault();
  var country = $("#enterCountryToSearch").val().trim();
  country = country.replace(" ","-");
  //console.log(country);
  covid19API(country);
  $(".canvas-div").css("display","block");
+ var newCountry= {
+     country_name : country
+ }
+ $.ajax('/api/countries',{type:'POST',data:newCountry}).then(function(response){
+    // console.log(response);
+     //location.reload();
+});
 });
