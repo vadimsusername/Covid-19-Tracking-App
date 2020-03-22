@@ -6,6 +6,8 @@ var router = express.Router();
 
 var connection =  require("../config/connection.js");
 
+/////////////////Get Route////////////////////////
+
 router.get("/", function(req, res) {
     connection.query("SELECT * FROM countries;", function(err, data) {
       if (err) throw err;

@@ -1,24 +1,22 @@
 <ul class="nav justify-content-end">
   <li class="whatIsCovid">
-    <a class="nav-link active" href="#whatCovid">COVID-19 FAQs</a>
+    <a class="nav-link active" href="#faqs">COVID-19 FAQs</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">COVID-19 News Feed</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">About US</a>
+    <a class="nav-link" href="#cdc">CDC Hot Line</a>
   </li>
 </ul>
 
 <br>
-
-<div class="first-container">
-  <div class="form-group">
-    <label for="enterCountryToSearch">Please Enter Country to Search</label>
-    <input type="country" class="form-control mr-sm-2" id="enterCountryToSearch" placeholder="country name goes here">
-  </div>
-<div class="submit">
-  <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+<form>
+  <div class="first-container">
+    <div class="form-group">
+      <label for="enterCountryToSearch">Please Enter Country to Search</label>
+      <input type="country" class="form-control mr-sm-2" id="enterCountryToSearch" placeholder="country name goes here">
+    </div>
+    <div class="submit">
+      <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+    </div>
   </div>
 </div>
 <div class="canvas-div" {{!-- style="width: 400px;height: 300px;" --}}>
@@ -29,18 +27,21 @@
 <div class="row">
   <div class="col-sm-6">
     <div class="card">
-      <div class="card-body">
+      <div class="card-body cb1">
         <img src="/assets/img/covid.png" alt="HTML5 Icon" width="400" height="200">
         <h4 class="card-title">A Global Impact</h4>
-        <p class="card-text">The Coronavirus COVID-19 outbreak was declared a Public Health Emergency of International Concern on 30 January 2020 by the World Health Organization.</p>
+        <p class="card-text">The Coronavirus COVID-19 outbreak was declared a Public Health Emergency of International
+          Concern on 30 January 2020 by the World Health Organization.</p>
+        <p class="card-text">Global Cases: 318,000 || Global Deaths: 13,672</p>
       </div>
     </div>
   </div>
   <div class="col-sm-6">
-    <div class="card">
+    <div class="card cb2">
       <div class="card-body">
         <h4 class="globalHotspots">Coronavirus COVID-19 Global Hotspots</h4>
         <div>
+          <br>
           <ul>
             {{#each countries}}
             {{> countries/countries-block}}
@@ -54,8 +55,8 @@
 <br>
 <br>
 
-<div class="card">
-  <div class="card-body" id="WhatCovid">
+<div class="card" id="faqs">
+  <div class="card-body">
     <h1>COVID-19 Global FAQs</h2>
       <h3>What is Coronavirus:</h3>
       <p>Coronaviruses are a large family of viruses, some causing illness in people and others circulating
@@ -87,3 +88,9 @@
       </ul>
   </div>
 </div>
+
+<div class="card" id="cdc">
+  <div class="card-body">
+    <h1>Center for Disease Controll (CDC) Hotline</h2>
+      <h3>1-800-232-4636</h3>
+  </div>
