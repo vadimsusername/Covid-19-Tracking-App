@@ -2,7 +2,11 @@
 // Set up MySQL connection.
 const util = require("util");
 var mysql = require("mysql");
+<<<<<<< HEAD
 require("dotenv").config();
+=======
+const dotenv = require("dotenv").config();
+>>>>>>> 949967b1a765b37d6e27e948d23961684fe61c0f
 
 
 var connection;
