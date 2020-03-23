@@ -2,7 +2,7 @@
 var express = require("express");
 var mysql = require("mysql");
 var exphbs = require("express-handlebars");
-
+var axios = require("axios");
 // Create express app instance.
 var app = express();
 
@@ -35,9 +35,59 @@ app.use(express.static("public"));
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 }); */
+/* function sortCountries(a,b){
+   var countryA = a.TotalConfirmed;
+   var countryB = b.TotalConfirmed;
+   return countryA -
+} */
 db.sequelize.sync().then(function() {
+
+  db.Stat.destroy({
+    where: {},
+    truncate: true
+  });
+  
   app.listen(PORT, function() {
     console.log("Server listening on: http://localhost:" + PORT);
+    var queryURL ='https://api.covid19api.com/summary'
+    axios.get(queryURL).then(function(res){
+      //console.log(res.data);
+      var countries = res.data.Countries;
+
+      countries.sort(function(a,b){
+        //console.log(a);
+        //console.log(b);
+        //console.log(`${a.ToltalConfirmed}, ${b.ToltalConfirmed}`);
+        if(a.TotalConfirmed < b.TotalConfirmed){
+          return 1;
+        }else{
+          return -1;
+        }
+        //return b.TotalConfirmed - a.TotalConfirmed;
+      });
+      db.Stat.bulkCreate([{
+        country : countries[0].Country,
+        confirmed : countries[0].TotalConfirmed,
+        deaths: countries[0].TotalDeaths
+      },{
+        country : countries[1].Country,
+        confirmed : countries[1].TotalConfirmed,
+        deaths: countries[1].TotalDeaths
+      },{
+        country : countries[2].Country,
+        confirmed : countries[2].TotalConfirmed,
+        deaths: countries[2].TotalDeaths
+      },{
+        country : countries[3].Country,
+        confirmed : countries[3].TotalConfirmed,
+        deaths: countries[3].TotalDeaths
+      }]).then(function(dbSearch){
+        return;
+      });
+     // console.log(countries);
+
+  
+    });
   });
 });
 
