@@ -9,7 +9,7 @@ var db = require("../models");
 /////////////////Get Route////////////////////////
 
 router.get("/", function(req, res) {
-    connection.query("SELECT * FROM countries;", function(err, data) {
+    /* connection.query("SELECT * FROM countries;", function(err, data) {
       if (err) throw err;
   
       // Test it
@@ -19,6 +19,11 @@ router.get("/", function(req, res) {
       // return res.send(data);
   
       res.render("index", { countries: data });
+    });
+ */
+    db.Stat.findAll({}).then(function(dbStat) {
+      
+      res.render("index", { countries: dbStat });
     });
   });
 
