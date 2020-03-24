@@ -23,4 +23,4 @@ We would like to add a few more APIs and implement a coresponding map of the cou
 https://covid-19-tracking-app.herokuapp.com/
 
 ## GitHub Repository
-https://github.com/MoCivers-Davis/Covid-19-Tracking-App 
+https://github.com/vadimsusername/Covid-19-Tracking-App
